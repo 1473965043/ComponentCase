@@ -1,0 +1,42 @@
+//定义额外属性，给外部使用
+ext.dependencies = [:]
+
+//插件
+def plugins = [:]
+plugins.application = 'com.android.application'
+plugins.library = 'com.android.application'
+
+//版本号
+def versions = [:]
+versions.junit = '4.12'
+versions.v7 = '26.1.0'
+versions.constraint = '1.0.2'
+versions.test_runner = '1.0.1'
+versions.test_espresso = '3.0.1'
+versions.arouter_api = '1.3.1'
+versions.arouter_compiler = '1.1.4'
+versions.eventbus = '3.1.1'
+
+//开发相关
+def des = [:]
+des.junit = "junit:junit:$versions.junit"
+des.support_appcompat_v7 = "com.android.support:appcompat-v7:$versions.v7"
+des.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint"
+des.test_runner = "com.android.support.test:runner:$versions.test_runner"
+des.test_espresso = "com.android.support.test.espresso:espresso-core:$versions.test_espresso"
+des.arouter_api = "com.alibaba:arouter-api:$versions.arouter_api"
+des.arouter_compiler = "com.alibaba:arouter-compiler:$versions.arouter_compiler"
+des.eventbus = "org.greenrobot:eventbus:$versions.eventbus"
+
+//依赖包
+def dependencies = [
+        'junit' : des.junit,
+        'appcompat-v7' : des.support_appcompat_v7,
+        'constraint-layout' : des.constraint_layout,
+        'test_runner': des.test_runner,
+        'test_espresso': des.test_espresso,
+        'arouter_api': des.arouter_api,
+        'arouter_compiler': des.arouter_compiler,
+        'eventbus': des.eventbus
+]
+ext.dependencies = dependencies
