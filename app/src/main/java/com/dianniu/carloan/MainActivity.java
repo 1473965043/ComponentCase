@@ -19,7 +19,7 @@ import java.util.List;
 @Route(path = ARouterParams.APP_MAIN)
 public class MainActivity extends BaseActivity {
 
-    private List<BottomItemView> mList = new ArrayList<>();
+    private List<BottomItemView> itemViews = new ArrayList<>();
     private String[] titles = {"首页", "发现", "我的"};
     /***
      * , "消息"
@@ -44,7 +44,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void bindView() {
-        bottomMenuLayout.setDatas(this, R.id.content_container, mList);
+        bottomMenuLayout.setDatas(this, R.id.content_container, itemViews);
         bottomMenuLayout.setCurrentFragment(0);
         bottomMenuLayout.setChangeListener(changeListener);
     }
@@ -55,7 +55,7 @@ public class MainActivity extends BaseActivity {
             itemView.setFragment(fragmentList.get(i));
             itemView.setIconId(unSelected[i]);
             itemView.setTitle(titles[i]);
-            mList.add(itemView);
+            itemViews.add(itemView);
         }
     }
 

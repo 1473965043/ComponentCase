@@ -92,8 +92,8 @@ public class BottomMenuLayout extends LinearLayout {
      * @param view
      */
     private void addItemView(final int position, View view){
-        ImageView img = (ImageView) view.findViewById(R.id.bottom_icon);
-        TextView title = (TextView) view.findViewById(R.id.bottom_title);
+        ImageView img = view.findViewById(R.id.bottom_icon);
+        TextView title = view.findViewById(R.id.bottom_title);
         img.setImageResource(mItemView.get(position).getIconId());
         title.setText(mItemView.get(position).getTitle());
         view.setOnClickListener(new OnClickListener() {

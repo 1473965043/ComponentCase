@@ -23,7 +23,7 @@
     <com.dianniu.common.widget.bottomMenuLayout.BottomMenuLayout
         android:id="@+id/bottomView"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

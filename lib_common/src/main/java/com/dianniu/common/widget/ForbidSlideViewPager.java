@@ -22,12 +22,12 @@ public class ForbidSlideViewPager extends ViewPager {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return false;
+        return false && super.onTouchEvent(event);
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        return false;
+        return false && super.onInterceptTouchEvent(event);
     }
 
 }
