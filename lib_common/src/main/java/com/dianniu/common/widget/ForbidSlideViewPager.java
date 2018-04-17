@@ -30,4 +30,8 @@ public class ForbidSlideViewPager extends ViewPager {
         return false && super.onInterceptTouchEvent(event);
     }
 
+    @Override
+    public void setCurrentItem(int item) {
+        super.setCurrentItem(item, false);
+    }
 }

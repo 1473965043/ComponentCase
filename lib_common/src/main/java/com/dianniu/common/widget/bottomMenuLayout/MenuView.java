@@ -1,16 +1,20 @@
 package com.dianniu.common.widget.bottomMenuLayout;
 
-import android.support.v4.app.Fragment;
-
 /**
  * Created by guodong on 2017/2/28.
  */
 
-public class BottomItemView {
+public class MenuView {
 
     private int iconId;
     private String title;
-    private Fragment fragment;
+
+    public MenuView(){}
+
+    public MenuView(int iconId, String title){
+        this.iconId = iconId;
+        this.title = title;
+    }
 
     public int getIconId() {
         return iconId;
@@ -26,13 +30,5 @@ public class BottomItemView {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public Fragment getFragment() {
-        return fragment;
-    }
-
-    public void setFragment(Fragment fragment) {
-        this.fragment = fragment;
     }
 }

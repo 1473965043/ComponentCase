@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<com.dianniu.common.widget.bottomMenuLayout.BottomMenuBar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
-
-    <com.dianniu.common.widget.ForbidSlideViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/bottomView"/>
-
-    <com.dianniu.common.widget.bottomMenuLayout.BottomMenuView
-        android:id="@+id/bottomView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
-
-</RelativeLayout>
+    android:id="@+id/content_container"
+    tools:context=".LoginActivity"/>

@@ -20,7 +20,7 @@ public class FunctionActivity extends BaseActivity {
         setContentView(R.layout.activity_function);
     }
 
-    public void toLogin(View view){
+    public void toLogin(){
         executeARouter(ARouterParams.MINE_MAIN);
 //        EventBus.getDefault().postSticky(new MessageEvent("粘性事件", "urgent"));
     }

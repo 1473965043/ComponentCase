@@ -7,7 +7,7 @@ import android.view.View;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.dianniu.common.params.ARouterParams;
 import com.dianniu.common.base.BaseActivity;
-import com.dianniu.common.widget.bottomMenuLayout.BottomItemView;
+import com.dianniu.common.widget.bottomMenuLayout.MenuView;
 import com.dianniu.common.widget.bottomMenuLayout.BottomMenuLayout;
 import com.dianniu.main.ui.Frag;
 import com.dianniu.main.ui.HomePageFrag;
@@ -19,17 +19,6 @@ import java.util.List;
 @Route(path = ARouterParams.APP_MAIN)
 public class MainActivity extends BaseActivity {
 
-    private List<BottomItemView> itemViews = new ArrayList<>();
-    private String[] titles = {"首页", "发现", "我的"};
-    /***
-     * , "消息"
-     * , R.mipmap.ic_launcher_round
-     */
-    private int[] unSelected = {
-            R.drawable.home, R.drawable.discover, R.drawable.mine
-    };
-
-    private List<Fragment> fragmentList = new ArrayList<>();
     private BottomMenuLayout bottomMenuLayout;
 
     @Override
@@ -37,45 +26,19 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomMenuLayout = findViewById(R.id.bottomView);
-//        setOnClickListener(clickListener, R.id.bottomView);
-        initFragment();
-        initDatas();
         bindView();
     }
 
     private void bindView() {
-        bottomMenuLayout.setDatas(this, R.id.content_container, itemViews);
-        bottomMenuLayout.setCurrentFragment(0);
-        bottomMenuLayout.setChangeListener(changeListener);
+        bottomMenuLayout.bindDatas(
+                new MenuView(R.drawable.home_selected, "首页")
+                , new MenuView(R.drawable.discover_selected, "发现")
+                , new MenuView(R.drawable.mine_selected, "我的")
+        );
+        bottomMenuLayout.bindFragments(
+                new HomePageFrag()
+                , new MineFrag()
+                , new Frag()
+        );
     }
-
-    private void initDatas() {
-        for(int i=0; i<titles.length; i++){
-            BottomItemView itemView = new BottomItemView();
-            itemView.setFragment(fragmentList.get(i));
-            itemView.setIconId(unSelected[i]);
-            itemView.setTitle(titles[i]);
-            itemViews.add(itemView);
-        }
-    }
-
-    private void initFragment() {
-        fragmentList.add(new HomePageFrag());
-        fragmentList.add(new MineFrag());
-        fragmentList.add(new Frag());
-    }
-
-    private View.OnClickListener clickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            executeARouter(ARouterParams.HOMEPAGE_MAIN);
-        }
-    };
-
-    private BottomMenuLayout.OnChangeListener changeListener = new BottomMenuLayout.OnChangeListener() {
-        @Override
-        public void change(int position) {
-
-        }
-    };
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="menuBarView" type="id"/>
+    <item name="menuViewPager" type="id"/>
+    <item name="fragmentContainer" type="id"/>
+    <item name="line" type="id"/>
+</resources>
