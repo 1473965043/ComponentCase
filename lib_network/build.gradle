@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    /** retrofit */
+    compile rootProject.ext.dependencies['retrofit']
+    compile rootProject.ext.dependencies['retrofit_converter_gson']
+    /** rxjava */
+    compile rootProject.ext.dependencies['rxjava']
+    /** rxandroid */
+    compile rootProject.ext.dependencies['rxandroid']
+    /** OkHttp日志拦截器 */
+    compile rootProject.ext.dependencies['okhttp3_logging_interceptor']
+    /** retrofit的RxJava适配器 */
+    compile rootProject.ext.dependencies['adapter_rxjava2']
+}

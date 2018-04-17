@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 
 /**
  * Created by guodong on 2017/5/12.
+ * 适配文件生成器
  */
 
 public class AdaptationUtils {

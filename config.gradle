@@ -16,6 +16,13 @@ versions.test_espresso = '3.0.1'
 versions.arouter_api = '1.3.1'
 versions.arouter_compiler = '1.1.4'
 versions.eventbus = '3.1.1'
+versions.retrofit = '2.4.0'
+versions.retrofit = '2.4.0'
+versions.retrofit_converter_gson = '2.4.0'
+versions.rxjava = '2.1.12'
+versions.rxandroid = '2.0.2'
+versions.okhttp3_logging_interceptor = '3.10.0'
+versions.adapter_rxjava2 = '2.4.0'
 
 //开发相关
 def des = [:]
@@ -27,6 +34,12 @@ des.test_espresso = "com.android.support.test.espresso:espresso-core:$versions.t
 des.arouter_api = "com.alibaba:arouter-api:$versions.arouter_api"
 des.arouter_compiler = "com.alibaba:arouter-compiler:$versions.arouter_compiler"
 des.eventbus = "org.greenrobot:eventbus:$versions.eventbus"
+des.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+des.retrofit_converter_gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit_converter_gson"
+des.rxjava = "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+des.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+des.okhttp3_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3_logging_interceptor"
+des.adapter_rxjava2 = "com.squareup.retrofit2:adapter-rxjava2:$versions.adapter_rxjava2"
 
 //依赖包
 def dependencies = [
@@ -37,6 +50,12 @@ def dependencies = [
         'test_espresso': des.test_espresso,
         'arouter_api': des.arouter_api,
         'arouter_compiler': des.arouter_compiler,
-        'eventbus': des.eventbus
+        'eventbus': des.eventbus,
+        'retrofit': des.retrofit,
+        'retrofit_converter_gson': des.retrofit_converter_gson,
+        'rxjava': des.rxjava,
+        'rxandroid': des.rxandroid,
+        'okhttp3_logging_interceptor':des.okhttp3_logging_interceptor,
+        'adapter_rxjava2': des.adapter_rxjava2
 ]
 ext.dependencies = dependencies

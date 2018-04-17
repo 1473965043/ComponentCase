@@ -28,13 +28,16 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation rootProject.ext.dependencies['appcompat-v7']
     implementation rootProject.ext.dependencies['constraint-layout']
-    testImplementation rootProject.ext.dependencies['junit']
-    androidTestImplementation rootProject.ext.dependencies['test_runner']
-    androidTestImplementation rootProject.ext.dependencies['test_espresso']
+    //    testImplementation rootProject.ext.dependencies['junit']
+    //    androidTestImplementation rootProject.ext.dependencies['test_runner']
+    //    androidTestImplementation rootProject.ext.dependencies['test_espresso']
+    implementation project(':lib_network')
+    /** ARouter */
     compile rootProject.ext.dependencies['arouter_api']
     annotationProcessor rootProject.ext.dependencies['arouter_compiler']
+    /** EventBus */
     compile rootProject.ext.dependencies['eventbus']
 }
