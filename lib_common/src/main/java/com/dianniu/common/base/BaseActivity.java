@@ -2,36 +2,22 @@ package com.dianniu.common.base;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.dianniu.common.bean.MessageEvent;
 import com.dianniu.common.params.ARouterParams;
-import com.jgd.network.RetrofitApiService;
-import com.jgd.network.RetrofitManage;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-
-import io.reactivex.Observer;
 
 /**
  * Created by guodong on 2018/4/12.
  */
 
 public class BaseActivity extends AppCompatActivity {
-
-    public RetrofitManage retrofitManage = null;
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        retrofitManage = RetrofitManage.getInstance();
-    }
 
     @Override
     protected void onStart() {
@@ -89,14 +75,5 @@ public class BaseActivity extends AppCompatActivity {
                findViewById(id).setOnClickListener(clickListener);
             }
         }
-    }
-
-    /**
-     * post请求
-     */
-    public void post(String url, Observer observer){
-        retrofitManage.execute(
-                retrofitManage.getService(RetrofitApiService.class).onGetData(url)
-                , observer);
     }
 }

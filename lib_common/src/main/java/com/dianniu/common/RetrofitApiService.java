@@ -1,4 +1,4 @@
-package com.jgd.network;
+package com.dianniu.common;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;

@@ -1,8 +1,8 @@
-package com.jgd.network;
+package com.dianniu.common;
 
-import com.dianniu.common.params.NetWordParams;
-import com.dianniu.common.util.LogUtil;
-import com.dianniu.common.util.UrlUtils;
+import com.jgd.network.common.NetWordParams;
+import com.jgd.network.json.JsonStringConverterFactory;
+import com.jgd.network.util.LogUtil;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +14,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by guodong on 2017/7/19.
@@ -48,13 +47,13 @@ public class RetrofitManage {
         });
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         okHttpClient = new OkHttpClient.Builder()
+                .addInterceptor(new BasicParamsInject().getInterceptor())//参数拦截器
                 .addInterceptor(loggingInterceptor)
                 .connectTimeout(NetWordParams.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(NetWordParams.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(NetWordParams.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .build();
         retrofit = new Retrofit.Builder()
-//                .addConverterFactory(GsonConverterFactory.create())//Gson解析网络数据
                 .addConverterFactory(JsonStringConverterFactory.create())//自定义返回数据
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(UrlUtils.BASE_URL)

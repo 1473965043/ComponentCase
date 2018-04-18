@@ -1,4 +1,4 @@
-package com.dianniu.common.util;
+package com.dianniu.common;
 
 /**
  * Created by guodong on 2018/4/17.
