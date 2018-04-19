@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dianniu.main" >
+    package="com.jgd.main" >
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.FunctionActivity"/>
+        <activity android:name="com.jgd.main.ui.FunctionActivity"/>
     </application>
 
 </manifest>

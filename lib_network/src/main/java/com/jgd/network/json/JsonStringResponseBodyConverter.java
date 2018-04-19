@@ -24,7 +24,7 @@ public class JsonStringResponseBodyConverter implements Converter<ResponseBody, 
             String response = value.string();
             JSONObject jsonObject = new Gson().fromJson(response, JSONObject.class);
             if(jsonObject.getInt(NetWordParams.CODE) != 0
-                    && jsonObject.get(NetWordParams.CODE) != 1){
+                    && jsonObject.getInt(NetWordParams.CODE) != 1){
                 throw new ApiException();
             }
             return response;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dianniu.mine">
+    package="com.jgd.mine">
 
     <application
-        android:name="com.dianniu.common.App"
+        android:name="com.jgd.common.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
