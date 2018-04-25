@@ -54,6 +54,7 @@ public class RetrofitClient {
                 .addInterceptor(new RequestParamsInterceptor())//参数拦截器
                 .addInterceptor(loggingInterceptor)//日志拦截器
                 .addNetworkInterceptor(new CacheInterceptor())
+                .cache(CacheProvide.create().provideCache())
                 .connectTimeout(NetWordParams.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(NetWordParams.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(NetWordParams.DEFAULT_TIMEOUT, TimeUnit.SECONDS)

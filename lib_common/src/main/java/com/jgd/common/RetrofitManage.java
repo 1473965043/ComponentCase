@@ -1,6 +1,9 @@
 package com.jgd.common;
 
+import com.jgd.network.common.CacheInterceptor;
+import com.jgd.network.common.CacheProvide;
 import com.jgd.network.common.NetWordParams;
+import com.jgd.network.common.RequestParamsInterceptor;
 import com.jgd.network.json.JsonStringConverterFactory;
 import com.jgd.network.util.LogUtil;
 
@@ -47,8 +50,10 @@ public class RetrofitManage {
         });
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         okHttpClient = new OkHttpClient.Builder()
-                .addInterceptor(new BasicParamsInject().getInterceptor())//参数拦截器
-                .addInterceptor(loggingInterceptor)
+                .addInterceptor(new RequestParamsInterceptor())//参数拦截器
+                .addInterceptor(loggingInterceptor)//日志拦截器
+                .addNetworkInterceptor(new CacheInterceptor())
+                .cache(CacheProvide.create().provideCache())
                 .connectTimeout(NetWordParams.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(NetWordParams.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(NetWordParams.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
