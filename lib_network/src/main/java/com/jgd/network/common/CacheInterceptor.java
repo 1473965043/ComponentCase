@@ -32,6 +32,7 @@ public class CacheInterceptor implements Interceptor {
                     .header("Cache-Control", "max-age="+cache)
                     .build();
         }
+        response.cacheResponse();
         return response;
     }
 

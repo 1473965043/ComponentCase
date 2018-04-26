@@ -11,6 +11,15 @@ import com.jgd.common.util.AppUtil;
 
 public class App extends Application {
 
+    public static App app;
+
+    public static App getInstance() {
+        if(app == null){
+            app = new App();
+        }
+        return app;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
